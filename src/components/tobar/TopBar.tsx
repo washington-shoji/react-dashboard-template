@@ -2,7 +2,6 @@ import React from 'react';
 import './TopBar.scss';
 import { GiHamburgerMenu, GiPerson, GiCog } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
-import { IconType } from 'react-icons';
 
 export interface ITopBarMenu {
 	id: number;
@@ -42,10 +41,14 @@ const rightNavData: ITopBarMenu[] = [
 	},
 ];
 
-export function TopBar(): JSX.Element {
+export interface ITopBarProps {
+	sidebarOpen: boolean;
+	openSidebar(): void;
+}
+export function TopBar({ openSidebar }: ITopBarProps): JSX.Element {
 	return (
 		<nav className='top__navbar'>
-			<div className='navbar__icon__wrapper'>
+			<div className='navbar__icon__wrapper' onClick={openSidebar}>
 				<GiHamburgerMenu className='navbar_icon' />
 			</div>
 			<div className='navbar__left'>
