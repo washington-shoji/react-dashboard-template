@@ -13,7 +13,7 @@
 
 		.navbar_icon {
 			font-size: 26px;
-			color: aliceblue;
+			color: lightgray;
 		}
 	}
 
@@ -27,7 +27,7 @@
 			font-weight: 700;
 		}
 
-		.navbar__left__link.active_link {
+		.navbar__left__link .active_link {
 			color: #265acc;
 			border-bottom: 3px solid #265acc;
 			padding-bottom: 2px;
@@ -47,6 +47,22 @@
 			background: white;
 			box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px white;
 			padding: 6px;
+		}
+	}
+}
+
+@media only screen and (max-width: 978px) {
+	.top__navbar {
+		.navbar__icon__wrapper {
+			display: inline;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.top__navbar {
+		.navbar__left {
+			display: none;
 		}
 	}
 }
