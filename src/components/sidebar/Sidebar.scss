@@ -34,6 +34,12 @@
 	}
 
 	.sidebar__menu {
+		.sidebar__link__active {
+			.sidebar__link__container {
+				background: rebeccapurple;
+			}
+		}
+
 		.sidebar__link__container {
 			display: flex;
 			gap: 1em;
@@ -41,13 +47,8 @@
 			color: white;
 			padding: 10px;
 			border-radius: 3px;
-
-			.sidebar__link {
-				text-decoration: none;
-				color: lightgray;
-				font-weight: 700;
-				text-transform: capitalize;
-			}
+			font-weight: 700;
+			text-transform: capitalize;
 		}
 	}
 

@@ -9,12 +9,13 @@ import {
 	MdOutlineTask,
 	MdSettings,
 } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { IconType } from 'react-icons';
 
 export interface ISidebar {
 	id: number;
 	title: string;
-	Icon: React.FC;
+	Icon: IconType;
 	internalLink: string;
 }
 
@@ -23,31 +24,31 @@ const sidebarData: ISidebar[] = [
 		id: 1,
 		Icon: MdOutlineSpaceDashboard,
 		title: 'dashboard',
-		internalLink: '',
+		internalLink: '/',
 	},
 	{
 		id: 2,
 		Icon: MdEvent,
 		title: 'event',
-		internalLink: '',
+		internalLink: '/event',
 	},
 	{
 		id: 3,
 		Icon: MdOutlineQueryStats,
 		title: 'stats',
-		internalLink: '',
+		internalLink: '/stat',
 	},
 	{
 		id: 4,
 		Icon: MdOutlineTask,
 		title: 'tasks',
-		internalLink: '',
+		internalLink: '/task',
 	},
 	{
 		id: 5,
 		Icon: MdSettings,
 		title: 'settings',
-		internalLink: '',
+		internalLink: '/setting',
 	},
 ];
 
@@ -71,12 +72,18 @@ export function Sidebar({
 				{sidebarData.map((data: ISidebar) => {
 					const { id, Icon, title, internalLink } = data;
 					return (
-						<div key={id} className='sidebar__link__container'>
-							<Icon />
-							<Link to={internalLink} className='sidebar__link'>
+						<NavLink
+							key={id}
+							exact
+							to={internalLink}
+							className='sidebar__link'
+							activeClassName='sidebar__link__active'
+						>
+							<div className='sidebar__link__container'>
+								<Icon />
 								{title}
-							</Link>
-						</div>
+							</div>
+						</NavLink>
 					);
 				})}
 				<div className='sidebar__logout'>
