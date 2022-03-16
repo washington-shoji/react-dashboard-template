@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './Layout.scss';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Main } from '../main/Main';
 import { Sidebar } from '../sidebar/Sidebar';
 import { TopBar } from '../tobar/TopBar';
+import { MainRouter } from '../router/MainRouter';
 
 function Layout(): JSX.Element {
 	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
@@ -20,7 +20,7 @@ function Layout(): JSX.Element {
 			<Route>
 				<div className='container'>
 					<TopBar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
-					<Main />
+					<MainRouter />
 					<Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
 				</div>
 			</Route>
