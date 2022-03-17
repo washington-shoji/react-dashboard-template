@@ -1,6 +1,6 @@
 import React from 'react';
 import './TopBar.scss';
-import { GiHamburgerMenu, GiPerson, GiCog } from 'react-icons/gi';
+import { GiHamburgerMenu, GiPerson, GiCog, GiYarn } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
 export interface ITopBarMenu {
@@ -39,6 +39,7 @@ const rightNavData: ITopBarMenu[] = [
 		icon: GiCog,
 		link: '#',
 	},
+	{ id: 3, icon: GiYarn, link: '#' },
 ];
 
 export interface ITopBarProps {
