@@ -1,6 +1,11 @@
 import './Dashboard.scss';
 import { GoOctoface } from 'react-icons/go';
-import { MdSubscriptions, MdPreview, MdVideoLibrary } from 'react-icons/md';
+import {
+	MdSubscriptions,
+	MdPreview,
+	MdVideoLibrary,
+	MdWifi,
+} from 'react-icons/md';
 import { IconType } from 'react-icons';
 
 export function Dashboard() {
@@ -70,6 +75,12 @@ export const mainCardData: IMainCardProps[] = [
 		CardIcon: MdPreview,
 		cardTitle: 'Viewers',
 		cardInfo: 10000,
+	},
+	{
+		id: 4,
+		CardIcon: MdWifi,
+		cardTitle: 'Good vibes',
+		cardInfo: 10000000000000,
 	},
 ];
 
